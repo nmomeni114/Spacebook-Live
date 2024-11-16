@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacebook Live</title>
+    
+    <!-- Include Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+    <!-- Include Emoji Button Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/emoji-button.min.css">
+</head>
+<body>
+    <h1>Spacebook Live</h1>
+
+    <!-- Messages Section -->
+    <ul id="messages"></ul>
+
+    <!-- Username Input Section -->
+
+
+    <!-- Video Viewer Section -->
+    <h1>Live Stream Viewer</h1>
+    <video id="remoteVideo" autoplay playsinline></video>
+
+
+    <div id="rightMiddleBox" class="box">
+
+        <div class="chat-container" id="chatbox">
+            <div id="usernameSection">
+                <input id="usernameInput" type="text" placeholder="Enter your username here..." required>
+                <button id="setUsernameButton">Confirm</button>
+            </div>
+        
+            <!-- Chat Form Section -->
+            <form id="chatForm" style="display:none;">
+                <button type="button" id="emojiPickerButton">😊</button>
+                <div id="emojiMenu" class="emoji-panel" style="display:none;">
+                    <!-- Emoji list -->
+                    <span>😊</span>
+                    <span>😂</span>
+                    <span>❤️</span>
+                    <span>👍</span>
+                    <span>😎</span>
+                    <span>😢</span>
+                    <span>🤔</span>
+                    <span>🎉</span>
+                    <span>😡</span>
+                    <span>💪</span>
+                    <span>🥳</span>
+                    <span>✨</span>
+                </div>
+                
+                <input id="messageInput" type="text" placeholder="Type your message here..." required>
+                <button type="submit">Send</button> 
+            </form>
+        </div>
+    
+    </div>
+
+    <!-- Include JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.min.js"></script>
+    <!-- Include Emoji Button Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/emoji-button.min.js"></script>
+    <!-- Include Custom JavaScript -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>
+
+
+    <!--
+    <script>
+        const chatbox = document.getElementById('chatbox');
+        const usernameInput = document.getElementById('username');
+        const messageInput = document.getElementById('message');
+        const maxMessages = 10;  // Maximum number of visible messages
+
+        // Function to send a message
+        function sendMessage() {
+            const username = usernameInput.value.trim();
+            const message = messageInput.value.trim();
+
+            if (username && message) {
+                addMessage(username, message);
+                messageInput.value = ''; // Clear the message input
+            } else {
+                alert("Please enter both a username and a message.");
+            }
+        }
+
+        // Function to add a new message
+        
+
+        // Function to fade out and remove a message
+        function fadeOutAndRemoveMessage(messageElement) {
+            messageElement.style.opacity = 0;
+            setTimeout(() => {
+                messageElement.remove(); // Remove after fade out
+            }, 1000); // Time matches the fade out duration
+        }
+    </script>
+
+
+    <script src="script.js"></script>
+
+-->
+
+
